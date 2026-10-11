@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorry, My Bandri 🐒💗</title>
+<style>
+:root { color-scheme: light dark; --pink:#f06a9b; --deep:#a72f62; --ink:light-dark(#54243b,#ffe9f2); --muted:light-dark(#81566a,#e8b8cd); --paper:light-dark(#fff8fb,#281520); --panel:light-dark(#ffffff,#3a1c2c); --line:light-dark(#f5c7d9,#633047); }
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;background:var(--paper);color:var(--ink)}
+#app{min-height:100vh;width:100%;overflow:hidden;position:relative;background:radial-gradient(ellipse at top,#ffe3ee 0,transparent 55%),linear-gradient(145deg,light-dark(#fff5fa,#25121d),light-dark(#ffe8f1,#3b1a2b));padding:24px 16px 40px}
+.wrap{width:min(760px,100%);margin:0 auto;position:relative;z-index:2}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1px solid var(--line);border-radius:99px;background:var(--panel);font-size:.82rem;color:var(--deep);letter-spacing:.04em}
+.hero{text-align:center;padding:24px 0 18px}
+.heart{font-size:3.6rem;display:block;animation:beat 1.4s infinite;filter:drop-shadow(0 8px 14px #ef7aa855)}
+h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(2.5rem,8vw,4.7rem);line-height:1.02;margin:16px 0;color:var(--deep);letter-spacing:-.04em}
+.subtitle{max-width:510px;margin:0 auto;color:var(--muted);font-size:1.04rem;line-height:1.7}
+.card{margin:20px auto 0;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:clamp(20px,5vw,38px);box-shadow:0 22px 60px #9e34501c}
+.to{font-size:.9rem;color:var(--muted);margin:0 0 8px}.recipient{font-family:Georgia,serif;font-size:2rem;color:var(--deep);margin:0 0 18px;overflow-wrap:anywhere}
+.message{font-size:1.06rem;line-height:1.9;white-space:pre-line;margin:0;color:var(--ink)}
+.sign{font-family:Georgia,serif;font-style:italic;color:var(--deep);font-size:1.25rem;margin-top:22px}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+button{font:inherit;font-weight:700;border:0;border-radius:999px;padding:13px 20px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#f47eaa,#df4f87);color:white;box-shadow:0 9px 20px #df4f8733}
+.secondary{background:var(--paper);color:var(--deep);border:1px solid var(--line)}
+#response{display:none;margin:18px auto 0;padding:16px;border-radius:18px;background:light-dark(#fff0f6,#4a2236);text-align:center;line-height:1.65;color:var(--deep)}
+.customizer{margin-top:24px;border-top:1px dashed var(--line);padding-top:22px}
+.customizer summary{cursor:pointer;font-weight:700;color:var(--deep);padding:4px 0 12px}
+label{display:block;font-size:.86rem;font-weight:700;margin:12px 0 6px;color:var(--muted)}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:13px;padding:12px 13px;font:inherit;background:var(--paper);color:var(--ink)}
+textarea{min-height:110px;resize:vertical;line-height:1.6}
+.small{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:12px}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:22px 8px 0}
+.float-heart{position:absolute;bottom:-50px;opacity:.48;pointer-events:none;animation:rise linear forwards;z-index:1}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.13)}30%{transform:scale(1)}}
+@keyframes rise{to{transform:translateY(-115vh) rotate(22deg);opacity:0}}
+@media(min-width:700px){#app{padding-top:36px}.hero{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main id="app">
+<div class="wrap">
+<header class="hero">
+<span class="pill">A LITTLE NOTE FROM MY HEART <span aria-hidden="true">♡</span></span>
+<span class="heart" aria-hidden="true">💗</span>
+<h1>I'm Sorry,<br>My Bandri 🐒💗</h1>
+<p class="subtitle">Some words are hard to say out loud, so I made this little corner of the internet to say them from my heart.</p>
+</header>
+<section class="card" aria-labelledby="recipient">
+<p class="to">This little note is for</p>
+<h2 class="recipient" id="recipient">My Bandri 🐒💕</h2>
+<p class="message" id="message">I’m truly sorry for hurting you. You matter so much to me, and I never want my words or actions to make you feel otherwise.
+
+I can’t undo what happened, but I can listen, understand, and try to do better. I don’t expect you to stop feeling upset straight away. Your feelings matter, and I’m ready to give you the time and space you need.
+
+I’m sorry, from the bottom of my heart. ❤️</p>
+<p class="sign" id="signoff">With love, always 💌</p>
+<div class="actions">
+<button class="primary" id="forgive">A little hug? 💗</button>
+<button class="secondary" id="time">I need a little time 🌷</button>
+</div>
+<div id="response" role="status" aria-live="polite"></div>
+<details class="customizer">
+<summary>Personalize this page ✨</summary>
+<label for="nameInput">Their name or nickname</label>
+<input id="nameInput" maxlength="60" placeholder="e.g. My Moon 🌙">
+<label for="messageInput">Your apology message</label>
+<textarea id="messageInput" maxlength="1200">I’m truly sorry for hurting you. You matter so much to me, and I never want my words or actions to make you feel otherwise.
+
+I can’t undo what happened, but I can listen, understand, and try to do better. I don’t expect you to stop feeling upset straight away. Your feelings matter, and I’m ready to give you the time and space you need.
+
+I’m sorry, from the bottom of my heart. ❤️</textarea>
+<label for="signInput">Your sign-off</label>
+<input id="signInput" maxlength="80" value="With love, always 💌">
+<div class="actions"><button class="primary" id="apply">Update my page 💞</button><button class="secondary" id="reset">Reset text</button></div>
+<p class="small">Tip: personalize the message before sharing. This page is interactive. Make changes to the HTML file before publishing if you want your own default message to appear automatically.</p>
+</details>
+</section>
+<footer>Made with a soft heart and a sincere apology 💗</footer>
+</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const defaultMessage="I’m truly sorry for hurting you. You matter so much to me, and I never want my words or actions to make you feel otherwise.\n\nI can’t undo what happened, but I can listen, understand, and try to do better. I don’t expect you to stop feeling upset straight away. Your feelings matter, and I’m ready to give you the time and space you need.\n\nI’m sorry, from the bottom of my heart. ❤️";
+$('apply').addEventListener('click',()=>{$('recipient').textContent=$('nameInput').value.trim()||'My Bandri 🐒💕';$('message').textContent=$('messageInput').value.trim()||defaultMessage;$('signoff').textContent=$('signInput').value.trim()||'With love, always 💌';$('response').style.display='none';});
+$('reset').addEventListener('click',()=>{$('nameInput').value='';$('messageInput').value=defaultMessage;$('signInput').value='With love, always 💌';$('recipient').textContent='My Bandri 🐒💕';$('message').textContent=defaultMessage;$('signoff').textContent='With love, always 💌';$('response').style.display='none';});
+$('forgive').addEventListener('click',()=>{$('response').textContent='Sending you the gentlest virtual hug. 💗 Thank you for hearing me out. I’ll show how sorry I am through my actions, too.';$('response').style.display='block';burstHearts(16);});
+$('time').addEventListener('click',()=>{$('response').textContent='Of course. Take all the time you need. I respect your feelings and won’t rush you. 🌷';$('response').style.display='block';});
+function burstHearts(n){for(let i=0;i<n;i++){const h=document.createElement('span');h.className='float-heart';h.textContent=['💗','💕','♡','💖','🌸'][Math.floor(Math.random()*5)];h.style.left=(5+Math.random()*90)+'%';h.style.fontSize=(16+Math.random()*25)+'px';h.style.animationDuration=(3+Math.random()*3)+'s';$('app').appendChild(h);setTimeout(()=>h.remove(),6500)}}
+setInterval(()=>{if(!document.hidden){const h=document.createElement('span');h.className='float-heart';h.textContent=['♡','💗','💕'][Math.floor(Math.random()*3)];h.style.left=(2+Math.random()*96)+'%';h.style.fontSize=(15+Math.random()*18)+'px';h.style.animationDuration=(7+Math.random()*5)+'s';$('app').appendChild(h);setTimeout(()=>h.remove(),12500)}},1500);
+</script>
+</body>
+</html>
